@@ -31,7 +31,8 @@ add_action('wp_enqueue_scripts', 'load_scripts');
 //Registrando menus
 register_nav_menus(
     array(
-        'my_main_menu' =>'Main Menu'
+        'my_main_menu' =>'Main Menu',
+        'footer_menu' => 'Footer Menu'
     )
 );
 /*Recebe um array onde são encontrados todos os menus a serem registrados (podem ser registrados mais de um por vez) 

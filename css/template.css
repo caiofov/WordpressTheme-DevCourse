@@ -8,6 +8,6 @@
     height: 30px;
 }
 
-.menu ul li{ 
+.main-menu ul li, .footer-menu ul li{ 
     display: inline; /*páginas lado a lado no menu*/
 }

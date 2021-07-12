@@ -26,7 +26,7 @@
             <div class="container">
                 <div class="row">
                     <div class="logo col-md-2 col-12 text-center">Logo</div>
-                    <nav class="menu col-md-10 text-right"><?php wp_nav_menu(array(
+                    <nav class="main-menu col-md-10 text-right"><?php wp_nav_menu(array(
                         'theme_location' => 'my_main_menu'
                         ));?></nav> 
                     <!--
