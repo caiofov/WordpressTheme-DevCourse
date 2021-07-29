@@ -28,14 +28,31 @@ add_action('wp_enqueue_scripts', 'load_scripts');
 /*1- Gancho | 2- função a ser executada */
 
 
-//Registrando menus
-register_nav_menus(
-    array(
-        'my_main_menu' =>'Main Menu',
-        'footer_menu' => 'Footer Menu'
-    )
-);
-/*Recebe um array onde são encontrados todos os menus a serem registrados (podem ser registrados mais de um por vez) 
+
+
+function wpcurso_config(){ //Função de configuração do tema
+    //Registrando menus
+    register_nav_menus(
+        array(
+            'my_main_menu' =>'Main Menu',
+            'footer_menu' => 'Footer Menu'
+        )
+    );
+    /*Recebe um array onde são encontrados todos os menus a serem registrados (podem ser registrados mais de um por vez) 
 1- Slug do menu: nome curto de identificação. É chamado de chave no array.
 Depois da => é o nome que o menu terá dentro da área de administração do wordpress.
 */
+    
+//essa função permite diversas alterações no tema pelo usuário
+    $args = array( //argumentos a serem personalizados
+        'height' => 225,
+        'width' => 1920
+        //essas dimensões são as recomendadas pelo wordpress
+    );
+    add_theme_support('custom-header', $args);
+    //adicionando header personalizado
+
+    add_theme_support('post-thumbnails');
+}
+
+add_action('after_setup_theme', 'wpcurso_config',0);
