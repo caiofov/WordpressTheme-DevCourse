@@ -52,7 +52,8 @@ Depois da => é o nome que o menu terá dentro da área de administração do wo
     add_theme_support('custom-header', $args);
     //adicionando header personalizado
 
-    add_theme_support('post-thumbnails');
+    add_theme_support('post-thumbnails'); //permite a inserção de thumbnails nos posts
+    add_theme_support('post-formats', array( 'video','image' )); //permite mudança de formato de post(imagem, vídeo, audio etc)
 }
 
 add_action('after_setup_theme', 'wpcurso_config',0);

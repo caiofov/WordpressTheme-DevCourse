@@ -2,7 +2,7 @@
     <h2><?php the_title();?></h2>
     <?php the_post_thumbnail(array(275,275)); //o parâmetro é o tamanho da imagem?>
     
-    <p>Published in <?php echo get_the_date(); //geralmente precisamos inserir "echo" antes das funções get, pois estas apenas recuperam um valor e não msotram nada na tela?> by <?php the_author_posts_link(); ?></p>
+    <p>Published in <?php echo get_the_date(); //geralmente precisamos inserir "echo" antes das funções get, pois estas apenas recuperam um valor e não msotram nada na tela?></p>
     <p>Categories: <?php the_category(' ') //o parâmetro é para separar as categorias por um espaço?></p>
     
     <p><?php the_tags('Tags: ', ', '); //Atributos: 

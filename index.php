@@ -36,10 +36,14 @@
                                         //Enquanto houver posts, mostre o post existente
                                         while(have_posts()): the_post();
                                 ?>
-                                <?php get_template_part('template-parts/content')
+                                
+                                <?php get_template_part('template-parts/content',get_post_format())
+                                //parâmetros -  - - -
                                 //primeiro (obrigatório): nome do arquivo (diretorio), sem a extensao
-                                //segunda (opcional):
+                                //segundo (opcional): dá prioridade ao segundo parâmetro quando vai buscar o nome do arquivo
+                                //getpostformat: retorna o formato do post que está rodando no loop. Nesse caso, dará prioridade e buscará um arquivo com o nome do tipo do post.
                                 ?>
+                                
                                 <?php
                                     endwhile; //termina o display dos posts (o while)
                                     else: //caso não haja posts
