@@ -1,6 +1,8 @@
 <!-- template padrão -->
 
 <?php get_header();?>
+<!-- adiciona a imagem do header escolhida pelo usuário. A classe deixa a imagem responsiva (bootstrap) -->
+<img class="img-fluid" src="<?php header_image();?>" height="<?php echo get_custom_header()->height;?>" width="<?php echo get_custom_header()->width;?>">
     
     <div class="content-area">
         
@@ -34,17 +36,10 @@
                                         //Enquanto houver posts, mostre o post existente
                                         while(have_posts()): the_post();
                                 ?>
-                                <article>
-                                    <h2><?php the_title();?></h2>
-                                    <?php the_post_thumbnail(array(275,275)); //o parâmetro é o tamanho da imagem?>
-                                    <p>Published in <?php echo get_the_date(); //geralmente precisamos inserir "echo" antes das funções get, pois estas apenas recuperam um valor e não msotram nada na tela?> by <?php the_author_posts_link(); ?></p>
-                                    <p>Categories: <?php the_category(' ') //o parâmetro é para separar as categorias por um espaço?></p>
-                                    <p><?php the_tags('Tags: ', ', '); //Atributos: 
-                                    //1- Texto que será mostrado antes da lista de tags
-                                    //2- separação das tags?></p>
-                                    <?php the_content(); //mostra o conteúdo do post
-                                    ?>
-                                </article>
+                                <?php get_template_part('template-parts/content')
+                                //primeiro (obrigatório): nome do arquivo (diretorio), sem a extensao
+                                //segunda (opcional):
+                                ?>
                                 <?php
                                     endwhile; //termina o display dos posts (o while)
                                     else: //caso não haja posts

@@ -1,8 +1,4 @@
 <?php get_header();?>
-
-<!-- adiciona a imagem do header escolhida pelo usuário. A classe deixa a imagem responsiva (bootstrap) -->
-<img class="img-fluid" src="<?php header_image();?>" height="<?php echo get_custom_header()->height;?>" width="<?php echo get_custom_header()->width;?>">
-    
     <div class="content-area">
         
         <main>
