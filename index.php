@@ -7,28 +7,10 @@
     <div class="content-area">
         
         <main>
-            <section class="slide">
-                <div class="container">
-                    <div class="row">
-                        Slide
-                    </div>
-                </div>
-            </section>
-
-            <section class="services">
-                <div class="container">
-                    <div class="row">
-                        Serviços
-                    </div>
-                </div>
-            </section>
 
             <section class="middle-area">
                     <div class="container">
                         <div class="row">
-                            <aside class="sidebar col-md-4">
-                                Barra Lateral
-                            </aside>
                             <div class="news col-md-8">
                                 <?php
                                     //se houver algum post publicado
@@ -41,7 +23,7 @@
                                 //parâmetros -  - - -
                                 //primeiro (obrigatório): nome do arquivo (diretorio), sem a extensao
                                 //segundo (opcional): dá prioridade ao segundo parâmetro quando vai buscar o nome do arquivo
-                                //getpostformat: retorna o formato do post que está rodando no loop. Nesse caso, dará prioridade e buscará um arquivo com o nome do tipo do post.
+                                //getpostformat: retorna o formato do post que está rodando no loop. Nesse caso, dará prioridade e buscará um arquivo com o nome do tipo do
                                 ?>
                                 
                                 <?php
@@ -53,18 +35,13 @@
                                     endif; //termina o if
                                 ?>
                             </div>
+                            <?php get_sidebar('blog')?>
                         </div>
                     </div>
                 
                 
             </section>
-            <section class="map">
-                <div class="container">
-                    <div class="row">
-                        Mapa
-                    </div>
-                </div>
-            </section>
+
         </main>
     
     </div>

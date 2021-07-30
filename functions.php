@@ -57,3 +57,32 @@ Depois da => é o nome que o menu terá dentro da área de administração do wo
 }
 
 add_action('after_setup_theme', 'wpcurso_config',0);
+
+//as sidebars precisam ser registradas em outro gancho, pois o "afeter_setup_theme" inicia muito cedo para esses elementos
+add_action('widgets_init', 'wpcurso_sidebars');
+
+function wpcurso_sidebars(){
+    register_sidebar(
+        array(
+            'name' => 'Home Page Sidebar',//indentifica a sidebar na área de administração (é o nome que aparece lá)
+            'id'=> 'sidebar-1', //precisa ser único
+            'description' => 'Sidebar to be used on Home Page', //breve descrição que aparece também na área de administração
+            'before_widget'=>'<div class="widget-wrapper">', //qual elemento que irá envolver cada widget na barra lateral
+            'after_widget'=>'</div>', //fecha a tag que abriu em before_widget
+            'before_title'=>'<h2 class="widget-title">', //o mesmo, mas para os títulos
+            'after_title'=>'</h2>'
+        )
+    );
+
+    register_sidebar(
+        array(
+            'name' => 'Blog Sidebar',
+            'id'=> 'sidebar-2',
+            'description' => 'Sidebar to be used on Blog Page',
+            'before_widget'=>'<div class="widget-wrapper">', 
+            'after_widget'=>'</div>',
+            'before_title'=>'<h2 class="widget-title">',
+            'after_title'=>'</h2>'
+        )
+    );
+}
