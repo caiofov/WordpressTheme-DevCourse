@@ -6,6 +6,13 @@
             <?php
             while(have_posts()):the_post();
                 get_template_part('template-parts/content','single');
+                
+                //se for possível comentar no post ou se já existirem comentários
+                if(comments_open() || get_coments_number()):
+                    comments_template(); //mostra um formulário de comentário
+
+                endif;
+            
             endwhile;
             ?>
         
