@@ -1,9 +1,11 @@
 <article <?php post_class(array('class'=> 'secondary')); //adiciona "featured" ao nome da class?>>
 
-    <h2><?php the_title();?></h2>
     <div class="thumbmnail">
-        <?php the_post_thumbnail('large',array('class'=> 'img-fluid')) //"img-fluid" é a classe do bootstrap que deixa a imagem responsiva;?>
+        <a href="<?php the_permalink();?>">
+            <?php the_post_thumbnail('large',array('class'=> 'img-fluid')) //"img-fluid" é a classe do bootstrap que deixa a imagem responsiva;?>
+        </a>
     </div>
+    <h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
     
     
     <div class="meta-info">
