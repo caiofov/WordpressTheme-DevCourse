@@ -28,7 +28,18 @@
                                 
                                 <?php
                                     endwhile; //termina o display dos posts (o while)
-                                    else: //caso não haja posts
+                                ?>
+                                <!-- paginação -->
+                                <div class="row">
+                                    <div class="pages text-left col-6">
+                                        <?php previous_posts_link("<< Newer posts");?>
+                                    </div>
+                                    <div class="pages text-right col-6">
+                                        <?php next_posts_link("Older posts >>")?>
+                                    </div>
+                                </div>
+                                <?php
+                                else: //caso não haja posts
                                 ?>
                                 <p>There's nothing yet to be displayed...</p> <!--Mostra caso não haja posts-->
                                 <?php 
